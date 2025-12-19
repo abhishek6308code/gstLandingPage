@@ -15,7 +15,7 @@ function AppWrapper() {
   const location = useLocation();
 
   const handleNavigate = (page: string) => {
-    navigate(`/${page === "home" ? "" : page}`);
+    navigate(`/${page === "courseHome" ? "" : page}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

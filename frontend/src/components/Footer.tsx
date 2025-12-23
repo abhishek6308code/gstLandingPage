@@ -6,7 +6,7 @@ interface FooterProps {
 
 export function Footer({ onNavigate }: FooterProps) {
 
-  const [policyType, setPolicyType] = useState<'privacy' | 'terms' | 'disclaimer' | null>(null);
+  // const [policyType, setPolicyType] = useState<'privacy' | 'terms' | 'disclaimer' | null>(null);
 
 
   const currentYear = new Date().getFullYear();
@@ -16,12 +16,12 @@ export function Footer({ onNavigate }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            
+
             <div className="flex space-x-4">
               <a href="https://www.facebook.com/profile.php?id=61584623472747" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Facebook className="w-5 h-5" />
               </a>
-              
+
               <a href="https://www.instagram.com/financeshowbyamit?igsh=NDQ4NHBlcWUyamIw" className="text-gray-400 hover:text-blue-500 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
@@ -33,7 +33,7 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center">
           <p className="text-sm text-gray-400">
             &copy; {currentYear} TheFinanceShowByAK. All rights reserved. |
-            <button
+            {/* <button
               onClick={() => setPolicyType('privacy')}
               className="ml-2 text-blue-400 hover:text-blue-500 underline"
             >
@@ -52,16 +52,37 @@ export function Footer({ onNavigate }: FooterProps) {
               className="ml-2 text-blue-400 hover:text-blue-500 underline"
             >
               Disclaimer
+            </button> */}
+
+            <button
+              onClick={() => onNavigate('privacy-policy')}
+              className="ml-2 text-blue-400 hover:text-blue-500 underline"
+            >
+              Privacy Policy
+            </button>
+
+            <button
+              onClick={() => onNavigate('terms-and-conditions')}
+              className="ml-2 text-blue-400 hover:text-blue-500 underline"
+            >
+              Terms of Service
+            </button>
+
+            <button
+              onClick={() => onNavigate('disclaimer')}
+              className="ml-2 text-blue-400 hover:text-blue-500 underline"
+            >
+              Disclaimer
             </button>
 
           </p>
           {/* PRIVACY POLICY MODAL */}
-          {policyType === 'privacy' && (
+          {/* {policyType === 'privacy' && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-              <div className="relative bg-white max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden">
+              <div className="relative bg-white max-w-2xl w-full rounded-2xl shadow-2xl overflow-hidden"> */}
 
-                {/* HEADER */}
-                <div className="flex items-center justify-between px-6 py-4 border-b">
+          {/* HEADER */}
+          {/* <div className="flex items-center justify-between px-6 py-4 border-b">
                   <h2 className="text-xl font-bold text-gray-900">Privacy Policy</h2>
                   <button
                     onClick={() => setPolicyType(null)}
@@ -69,10 +90,10 @@ export function Footer({ onNavigate }: FooterProps) {
                   >
                     ✕
                   </button>
-                </div>
+                </div> */}
 
-                {/* CONTENT */}
-                <div className="p-6 max-h-[70vh] overflow-y-auto text-gray-700 space-y-4 text-sm leading-relaxed">
+          {/* CONTENT */}
+          {/* <div className="p-6 max-h-[70vh] overflow-y-auto text-gray-700 space-y-4 text-sm leading-relaxed">
                   <p>
                     At <strong>TheFinanceShowByAK</strong>, we respect your privacy and are
                     committed to protecting your personal information.
@@ -106,10 +127,10 @@ export function Footer({ onNavigate }: FooterProps) {
                     <strong>If you have any questions, please contact us at</strong>
                     <strong className="text-blue-500"> thefinanceshowbyak@gmail.com</strong>.
                   </p>
-                </div>
+                </div> */}
 
-                {/* FOOTER */}
-                <div className="px-6 py-4 border-t text-right">
+          {/* FOOTER */}
+          {/* <div className="px-6 py-4 border-t text-right">
                   <button
                     onClick={() => setPolicyType(null)}
                     className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
@@ -183,7 +204,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 </div>
               </div>
             </div>
-          )}
+          )} */}
 
 
         </div>

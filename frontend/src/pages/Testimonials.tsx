@@ -9,8 +9,15 @@ import testimonials6 from '../assets/testimonial6.jpg';
 import testimonials8 from '../assets/testimonial8.jpg';
 import testimonials9 from '../assets/testimonial9.jpg';
 
-const testimonials = [
-  {
+type Testimonial = {
+  name: string;
+  role: string;
+  image: string;
+  content: string;
+  rating: number;
+};
+
+const testimonials: Testimonial[] = [{
     name: 'Priya Sharma',
     role: 'Small Business Owner',
     image: testimonials7,
@@ -59,7 +66,7 @@ const testimonials = [
     content: 'Highly recommended for professionals.',
     rating: 5,
   },
-  ,
+  
   {
     name: 'Sunita Rao',
     role: 'Finance Professional',
@@ -69,7 +76,7 @@ const testimonials = [
   },
   ,
   {
-    name: 'Anil Singh',
+    name: 'Mandeep Singh',
     role: 'Freelance Consultant',
     image: testimonials8,
     content: 'Highly recommended for professionals.',
@@ -119,7 +126,7 @@ export default function Testimonials() {
         >
           {testimonials.map((testimonial, index) => (
             <div
-              key={index}
+              key={testimonial.name}
               className="min-w-[85%] sm:min-w-[45%] lg:min-w-[30%] snap-start bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <Quote className="w-10 h-10 text-blue-600 mb-4 opacity-50" />

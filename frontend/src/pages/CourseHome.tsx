@@ -5,7 +5,6 @@ import { ArrowRight, } from 'lucide-react';
 import axios from 'axios';
 import PaymentQR from '../assets/paymentQR.png';
 import HeroImage from '../assets/hero.jpg';
-
 import images1 from '../assets/images1.jpeg'
 import images2 from '../assets/images2.jpeg'
 import images3 from '../assets/images3.jpeg'
@@ -16,6 +15,7 @@ import { motion } from 'framer-motion';
 
 import Testimonials from './Testimonials';
 import CourseHighlights from './CourseHighlight';
+
 
 const MAX_POPUPS = 3;
 const POPUP_DELAY = 10000; // 10 seconds
@@ -36,7 +36,7 @@ export function CourseHome({ onNavigate }: CourseProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
   const openWhatsApp = () => {
-    const phone = '919721682580'; // WhatsApp number (without +)
+    const phone = '919286977418'; // WhatsApp number (without +)
     const message = 'Hello! Welcome to The Finance Show By AK.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
@@ -269,7 +269,7 @@ export function CourseHome({ onNavigate }: CourseProps) {
             {/* Brand */}
             <div
               className="flex items-center gap-1.5 sm:gap-2 cursor-pointer min-w-0"
-              onClick={() => handleNavigate('courseHome')}
+              onClick={() => onNavigate('')}
             >
               <img
                 src={logo}
@@ -308,7 +308,7 @@ export function CourseHome({ onNavigate }: CourseProps) {
                 >
                   <path d="M16.001 3.2c-7.064 0-12.8 5.736-12.8 12.8 0 2.256.592 4.448 1.712 6.384L3.2 28.8l6.608-1.696c1.856.992 3.952 1.504 6.192 1.504 7.064 0 12.8-5.736 12.8-12.8s-5.736-12.8-12.8-12.8zm0 23.2c-1.92 0-3.776-.512-5.408-1.472l-.384-.224-3.92 1.008 1.04-3.808-.256-.4a10.49 10.49 0 01-1.632-5.6c0-5.824 4.736-10.56 10.56-10.56S26.56 10.88 26.56 16.704 21.824 26.4 16.001 26.4zm5.616-7.728c-.304-.16-1.792-.88-2.064-.976-.272-.096-.464-.144-.656.16-.192.304-.752.976-.928 1.168-.176.192-.352.208-.656.048-.304-.16-1.28-.472-2.432-1.504-.896-.8-1.504-1.776-1.68-2.08-.176-.304-.02-.464.132-.624.136-.136.304-.352.456-.528.152-.176.2-.304.304-.512.104-.208.056-.384-.024-.544-.08-.16-.656-1.584-.896-2.176-.24-.592-.48-.512-.656-.512-.176 0-.376-.032-.576-.032s-.544.08-.832.384c-.288.304-1.088 1.056-1.088 2.576 0 1.52 1.12 2.992 1.28 3.2.16.208 2.192 3.344 5.312 4.672.744.32 1.328.512 1.78.656.744.24 1.424.208 1.952.128.592-.088 1.792-.736 2.048-1.456.256-.72.256-1.344.176-1.456-.08-.112-.272-.176-.576-.336z" />
                 </svg> */}
-              
+
                 WhatsApp
               </button>
 
@@ -552,7 +552,7 @@ export function CourseHome({ onNavigate }: CourseProps) {
                   className=" px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all"
                 >
                   <a href="tel:+919286977418" className="text-blue-600 font-semibold hover:text-blue-700">
-                    Talk to Mentor
+                    Talk to Mentor 9286977418
                   </a>
                 </button>
               </div>
@@ -684,10 +684,25 @@ export function CourseHome({ onNavigate }: CourseProps) {
                         />
                         <button
                           onClick={() => setShowEnquiryModal(true)}
-                          className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+                          className="
+    mt-6
+    px-10 py-4
+    bg-gradient-to-r from-blue-600 to-indigo-600
+    text-white
+    rounded-xl
+    font-semibold
+    text-lg
+    shadow-lg
+    hover:from-blue-700 hover:to-indigo-700
+    hover:shadow-xl
+    transform hover:-translate-y-0.5
+    transition-all duration-300
+    focus:outline-none focus:ring-4 focus:ring-blue-300
+  "
                         >
                           Enroll Now
                         </button>
+
                       </div>
 
                       <div className="lg:col-span-2">
@@ -697,7 +712,7 @@ export function CourseHome({ onNavigate }: CourseProps) {
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
                           {service.features.map((feature, featureIndex) => (
-                            
+
                             <motion.div
                               whileHover={{ y: -5 }}
                               className="bg-gray-50 border border-gray-200 rounded-xl p-4 flex gap-4 items-start hover:shadow-md transition"
